@@ -3,7 +3,7 @@ from pathlib import Path
 
 from utils.config import RAW_DATA_DIR, START_YEAR, END_YEAR, DATE_COLUMN
 
-def load_and_merge_station_data(file_path):
+def load_and_merge_station_data():
     dataframes = []
 
     for csv_file in RAW_DATA_DIR.glob("*.csv"):
@@ -23,7 +23,7 @@ def load_and_merge_station_data(file_path):
         ]
 
         station_code = csv_file.stem
-        df["stattion_code"] = station_code 
+        df["station_code"] = station_code 
 
         dataframes.append(df)
 

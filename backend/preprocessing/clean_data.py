@@ -5,7 +5,7 @@ from utils.config import FEATURE_COLUMNS, TARGET_COLUMN
 def clean_air_quality_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
-    df = df.dropna(susbet=TARGET_COLUMN)
+    df = df.dropna(subset=TARGET_COLUMN)
 
     for feature in FEATURE_COLUMNS:
         if feature in df.columns:
