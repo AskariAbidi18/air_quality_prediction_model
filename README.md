@@ -1,4 +1,4 @@
-#Air Quality Prediction & AI Health Insight System
+# Air Quality Prediction & AI Health Insight System
 
 A full-stack machine learning project that predicts **PM2.5 air pollution levels** for Lucknow using real monitoring station data and provides **AI-generated health insights** using Google Gemini.
 
@@ -19,31 +19,32 @@ The focus is on **end-to-end ML engineering**, not just model training.
 
 ## 🧠 System Architecture
 
+```
 Data (CSV files)
-↓
+    ↓
 Preprocessing & Cleaning
-↓
+    ↓
 Feature Engineering
-↓
+    ↓
 ML Model (Random Forest Regressor)
-↓
+    ↓
 FastAPI Backend
 ├── /predict → PM2.5 prediction
 ├── /insights → AI health explanation (Gemini)
 └── /evaluation → Model metrics (RMSE, R²)
-↓
+    ↓
 Frontend (HTML/CSS/JS)
-
+```
 
 ---
 
 ## 📊 Dataset
 
-- Source: Government air quality monitoring stations  
-- City: **Lucknow**  
-- Time range used: **2019–2023**  
-- Granularity: **Hourly data**  
-- Multiple stations merged into a unified dataset  
+- **Source**: Government air quality monitoring stations  
+- **City**: Lucknow  
+- **Time range**: 2019–2023  
+- **Granularity**: Hourly data  
+- **Multiple stations** merged into a unified dataset  
 
 Each station file contains pollutant concentrations such as:
 
@@ -131,38 +132,13 @@ CORS is enabled for frontend connectivity.
 
 ## ▶️ How to Run
 
-### 1. Install dependencies
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-
-# Air Quality Prediction System
-
-## 🚀 Getting Started
-
-### 2. Run Backend
-
-Start the FastAPI backend server with hot-reload enabled:
-
-```bash
-uvicorn backend.app:app --reload
 ```
 
-### 3. Open Frontend
-
-Open `index.html` in a browser. For better compatibility, serve it via a local server:
-
-```bash
-# Using Python's built-in server
-python -m http.server 8000
-
-# Or using Node.js http-server
-npx http-server
-```
-
-Then navigate to `http://localhost:8000` in your browser.
-
-## 🔐 Environment Variables
+### 2. Set Environment Variables
 
 Set your Gemini API key before running the application:
 
@@ -181,25 +157,105 @@ set GOOGLE_API_KEY=your_api_key_here
 $env:GOOGLE_API_KEY="your_api_key_here"
 ```
 
+### 3. Run Backend
+
+Start the FastAPI backend server with hot-reload enabled:
+
+```bash
+uvicorn backend.app:app --reload
+```
+
+The backend will be available at `http://localhost:8000`
+
+### 4. Open Frontend
+
+Open `index.html` in a browser. For better compatibility, serve it via a local server:
+
+**Using Python's built-in server:**
+```bash
+python -m http.server 8000
+```
+
+**Using Node.js http-server:**
+```bash
+npx http-server
+```
+
+Then navigate to `http://localhost:8000` in your browser.
+
+---
+
 ## 📌 Important Notes
 
 - **Prediction Target**: The model predicts PM2.5 concentration values, not official AQI scores.
 - **AQI Categories**: The displayed AQI categories are approximate and used only for interpretation purposes.
 - **Project Focus**: This project prioritizes engineering workflow and model explainability over achieving perfect accuracy metrics.
 
+---
+
 ## 🔍 Understanding the Output
 
 The model provides PM2.5 predictions which are then mapped to AQI categories for easier interpretation:
 
-| PM2.5 Range (µg/m³) | AQI Category |
-|---------------------|--------------|
-| 0-12 | Good |
-| 12-35.4 | Moderate |
-| 35.4-55.4 | Unhealthy for Sensitive Groups |
-| 55.4-150.4 | Unhealthy |
-| 150.4-250.4 | Very Unhealthy |
-| 250.4+ | Hazardous |
+| PM2.5 Range (µg/m³) | AQI Category | Health Implications |
+|---------------------|--------------|---------------------|
+| 0-12 | Good | Air quality is satisfactory |
+| 12-35.4 | Moderate | Acceptable for most people |
+| 35.4-55.4 | Unhealthy for Sensitive Groups | Sensitive groups may experience health effects |
+| 55.4-150.4 | Unhealthy | Everyone may begin to experience health effects |
+| 150.4-250.4 | Very Unhealthy | Health alert: everyone may experience serious effects |
+| 250.4+ | Hazardous | Health warning of emergency conditions |
 
 ---
 
+## 📂 Project Structure
+
+```
+.
+├── backend/
+│   ├── app.py              # FastAPI application
+│   ├── model.py            # ML model training and prediction
+│   └── requirements.txt    # Python dependencies
+├── data/
+│   └── [CSV files]         # Air quality datasets
+├── frontend/
+│   ├── index.html          # Main HTML file
+│   ├── styles.css          # Styling
+│   └── script.js           # Frontend logic
+├── models/
+│   └── [Trained models]    # Saved ML models
+└── README.md               # This file
+```
+
+---
+
+## 🚧 Future Enhancements
+
+- Add real-time data fetching from live APIs
+- Implement time-series forecasting for future predictions
+- Deploy to cloud platform (AWS/GCP/Azure)
+- Add more cities and comparative analysis
+- Include weather data for improved predictions
+- Mobile-responsive design improvements
+
+---
+
+## 📄 License
+
+This project is open-source and available for educational purposes.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page or submit a pull request.
+
+---
+
+## 📧 Contact
+
 For questions or issues, please refer to the project documentation or open an issue on GitHub.
+
+---
+
+**Built with ❤️ for cleaner air and better health insights**
