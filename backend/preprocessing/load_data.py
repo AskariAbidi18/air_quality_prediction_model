@@ -1,7 +1,7 @@
 import pandas as pd 
 from pathlib import Path
 
-from utils.config import RAW_DATA_DIR, START_YEAR, END_YEAR, DATE_COLUMN
+from backend.utils.config import RAW_DATA_DIR, START_YEAR, END_YEAR, DATE_COLUMN
 
 def load_and_merge_station_data():
     dataframes = []

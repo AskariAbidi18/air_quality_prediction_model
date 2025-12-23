@@ -2,7 +2,7 @@ import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
-from utils.config import MODEL_PATH, TEST_SIZE, RANDOM_STATE
+from backend.utils.config import MODEL_PATH, TEST_SIZE, RANDOM_STATE
 
 def train_random_forest(X, y):
     X_train, X_test, y_train, y_test = train_test_split(

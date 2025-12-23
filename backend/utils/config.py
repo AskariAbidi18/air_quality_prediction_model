@@ -26,7 +26,8 @@ FEATURE_COLUMNS = [
     "NO2 (ug/m3)",
     "SO2 (ug/m3)",
     "CO (mg/m3)",
-    "Ozone (ug/m3)"
+    "Ozone (ug/m3)",
+    "month"
 ]
 
 RANDOM_STATE = 42

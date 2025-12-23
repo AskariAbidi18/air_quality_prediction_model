@@ -1,11 +1,11 @@
 from google import genai
 import os
-from utils.config import POLLUTANT_THRESHOLDS
+from backend.utils.config import POLLUTANT_THRESHOLDS
 
 # Initialize Gemini client
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
-MODEL_NAME = "models/gemini-pro-latest"
+MODEL_NAME = "models/gemini-flash-latest"
 
 
 def _get_high_pollutants(pollutants: dict):

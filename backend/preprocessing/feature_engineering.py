@@ -1,6 +1,6 @@
 import pandas as pd
 
-from utils.config import FEATURE_COLUMNS, TARGET_COLUMN, DATE_COLUMN
+from backend.utils.config import FEATURE_COLUMNS, TARGET_COLUMN, DATE_COLUMN
 
 def prepare_features_and_target(df: pd.DataFrame):
     df = df.copy()

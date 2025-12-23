@@ -1,6 +1,6 @@
 import pandas as pd
 
-from utils.config import FEATURE_COLUMNS, TARGET_COLUMN 
+from backend.utils.config import FEATURE_COLUMNS, TARGET_COLUMN 
 
 def clean_air_quality_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
